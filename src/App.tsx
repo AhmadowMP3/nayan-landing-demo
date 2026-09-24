@@ -5,6 +5,7 @@ import Film from "./sections/Film";
 import Discover from "./sections/Discover";
 import Points from "./sections/Points";
 import Specs from "./sections/Specs";
+import Testimonial from "./sections/Testimonial";
 import { startSmoothScroll } from "./lib/smoothScroll";
 import { prefersReducedMotion } from "./lib/motion";
 
@@ -26,6 +27,7 @@ export default function App() {
         <Discover />
         <Points />
         <Specs />
+        <Testimonial />
       </main>
       <Nav />
     </>
