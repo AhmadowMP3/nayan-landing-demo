@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import Film from "./sections/Film";
 import Discover from "./sections/Discover";
 import Points from "./sections/Points";
+import Specs from "./sections/Specs";
 import { startSmoothScroll } from "./lib/smoothScroll";
 import { prefersReducedMotion } from "./lib/motion";
 
@@ -24,6 +25,7 @@ export default function App() {
         <Film />
         <Discover />
         <Points />
+        <Specs />
       </main>
       <Nav />
     </>
