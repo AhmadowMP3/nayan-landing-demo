@@ -6,6 +6,7 @@ import Discover from "./sections/Discover";
 import Points from "./sections/Points";
 import Specs from "./sections/Specs";
 import Testimonial from "./sections/Testimonial";
+import Services from "./sections/Services";
 import { startSmoothScroll } from "./lib/smoothScroll";
 import { prefersReducedMotion } from "./lib/motion";
 
@@ -28,6 +29,7 @@ export default function App() {
         <Points />
         <Specs />
         <Testimonial />
+        <Services />
       </main>
       <Nav />
     </>
