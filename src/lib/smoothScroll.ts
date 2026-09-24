@@ -13,6 +13,7 @@ export function startSmoothScroll() {
     duration: 1.4,
     easing: (t) => 1 - Math.pow(1 - t, 3),
     smoothWheel: true,
+    anchors: true, // nav links (#project, #services…) glide instead of jumping
   });
   if (locked) lenis.stop();
 
