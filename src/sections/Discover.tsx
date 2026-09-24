@@ -5,11 +5,13 @@ import { discover } from "../content";
 import { prefersReducedMotion, revealIn, revealWords } from "../lib/motion";
 import Eyebrow from "../components/Eyebrow";
 import Words from "../components/Words";
+import { photoByFile, photoSrc } from "../lib/nayanPhotos";
 
 /**
  * Section 2 — a large statement over a row of chevrons pointing LEFT ("forward" in RTL),
- * filled with stills from the film. The row starts on the right and fades out towards the left;
- * as it scrolls in, each chevron slides leftwards into place.
+ * filled with real Nayan project photos (no zoom — the photos are shown as they are). The row
+ * starts on the right and fades out towards the left; as it scrolls in, each chevron slides
+ * leftwards into place.
  */
 
 // Left-pointing chevron: the point is on the left, the notch on the right.
@@ -44,20 +46,11 @@ export default function Discover() {
           scrollTrigger: { trigger: rowRef.current, start: "top 95%", end: "center 55%", scrub: 0.8 },
         },
       );
-      gsap.fromTo(
-        "[data-chevron] img",
-        { scale: 1.25 },
-        {
-          scale: 1,
-          ease: "none",
-          scrollTrigger: { trigger: rowRef.current, start: "top bottom", end: "bottom top", scrub: 0.8 },
-        },
-      );
     }, sectionRef);
     return () => ctx.revert();
   }, []);
 
-  const images = [...assets.chevrons, null];
+  const images = [...assets.chevrons.map(photoByFile), null];
 
   return (
     <section
@@ -82,7 +75,7 @@ export default function Discover() {
           className="mt-16 flex justify-center md:mt-24"
           style={{ ["--w" as string]: "clamp(96px, 22vw, 340px)" }}
         >
-          {images.map((src, i) => (
+          {images.map((photo, i) => (
             <div
               key={i}
               data-chevron
@@ -95,10 +88,10 @@ export default function Discover() {
                 opacity: FADE[i],
               }}
             >
-              {src ? (
+              {photo ? (
                 <img
-                  src={src}
-                  alt={discover.imageAlts[i]}
+                  src={photoSrc(photo.file)}
+                  alt={photo.project?.trim() ?? ""}
                   loading="lazy"
                   decoding="async"
                   className="absolute inset-0 h-full w-full object-cover"

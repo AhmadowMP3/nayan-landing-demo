@@ -6,6 +6,7 @@ import { services, servicesSection } from "../content";
 import { prefersReducedMotion, revealIn } from "../lib/motion";
 import Arrow from "../components/Arrow";
 import Eyebrow from "../components/Eyebrow";
+import { photoSrc } from "../lib/nayanPhotos";
 
 /**
  * Section 6 — services (dark). Four huge rows, each with a left-pointing arrow. Hovering a row
@@ -69,7 +70,7 @@ export default function Services() {
                   }
                 >
                   <img
-                    src={assets.services[i]}
+                    src={photoSrc(assets.services[i])}
                     alt=""
                     loading="lazy"
                     decoding="async"

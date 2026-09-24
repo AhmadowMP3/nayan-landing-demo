@@ -49,7 +49,6 @@ export const placeholder = {
 export const discover = {
   label: "مشاريع نيــــان",
   statement: "اكتشف مشاريع نيان… حيث التفاصيل تصنع الفرق.",
-  imageAlts: ["غرفة معيشة في أحد مشاريع نيــــان", "واجهة أحد مباني نيــــان", "صالة بارتفاع مزدوج"],
 };
 
 /** Section 3 — three points */
@@ -71,6 +70,16 @@ export const points = [
     body: "نقدّم إدارة وخدمات بعد البيع للحفاظ على قيمة العقار.",
   },
 ];
+
+/** "مشاريعنا" — real projects from nayan.sa (names + statuses come from the manifest, as on the site). */
+export const projectsSection = {
+  label: "أعمالنا",
+  title: "مشاريعنا",
+  viewProject: "عرض المشروع على nayan.sa",
+  newTab: "(يفتح في نافذة جديدة)",
+  allProjects: "كل المشاريع",
+  allProjectsUrl: "https://nayan.sa/ar/properties",
+};
 
 /** Section 4 — project specs. PLACEHOLDER: every value below is to be confirmed with the client. */
 export const specs = {

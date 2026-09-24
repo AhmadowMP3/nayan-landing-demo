@@ -4,6 +4,7 @@ import Nav from "./components/Nav";
 import Film from "./sections/Film";
 import Discover from "./sections/Discover";
 import Points from "./sections/Points";
+import Projects from "./sections/Projects";
 import Specs from "./sections/Specs";
 import Testimonial from "./sections/Testimonial";
 import Services from "./sections/Services";
@@ -30,6 +31,7 @@ export default function App() {
         <Film />
         <Discover />
         <Points />
+        <Projects />
         <Specs />
         <Testimonial />
         <Services />

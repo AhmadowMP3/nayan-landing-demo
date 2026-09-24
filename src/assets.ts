@@ -21,10 +21,14 @@ export const pickFrameSet = (): FrameSet =>
 
 export const assets = {
   logo: publicUrl("assets/logowhite.webp"),
-  /** Section 2 chevrons — living room, building B, B's interior. */
-  chevrons: [still(100), still(170), still(235)],
-  /** Section 6 — one still per service row, in the order of `services` in content.ts. */
-  services: [still(170), still(100), still(235), still(1)],
+  /** Section 2 chevrons — real project photos (files in /public/assets/nayan, see manifest.json). */
+  chevrons: ["nayan-townhouse-22-01.webp", "nayan-30-01.webp", "nayan-23-01.webp"],
+  /**
+   * Section 6 — one real photo per service row, in the order of `services` in content.ts:
+   * development → a finished townhouse, custom design → an interior, management → a rental
+   * project, investment → Malqa Center.
+   */
+  services: ["nayan-townhouse-22-01.webp", "nayan-site-05.webp", "nayan-26-01.webp", "almalqa-center-01.webp"],
   /** Section 4 — building B from the street. */
   project: still(170),
 };
