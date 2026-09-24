@@ -21,6 +21,7 @@ export const pickFrameSet = (): FrameSet =>
 
 export const assets = {
   logo: publicUrl("assets/logowhite.webp"),
+  logoDark: publicUrl("assets/logoblack.webp"),
   /** Section 2 chevrons — real project photos (files in /public/assets/nayan, see manifest.json). */
   chevrons: ["nayan-townhouse-22-01.webp", "nayan-30-01.webp", "nayan-23-01.webp"],
   /**

@@ -9,13 +9,18 @@ export const brand = {
 
 export const nav = {
   links: [
-    { label: "المشروع", href: "#project" },
-    { label: "المرافق", href: "#amenities" },
+    { label: "الرئيسية", href: "#film" },
+    { label: "من نحن", href: "#why" },
+    { label: "المشاريع", href: "#projects" },
     { label: "الخدمات", href: "#services" },
-    { label: "تواصل معنا", href: "#contact" },
   ],
-  cta: "احجز استشارة",
+  cta: "استشارة",
+  ctaLabel: "احجز استشارة عبر واتساب",
   homeLabel: "نيــــان — الصفحة الرئيسية",
+  // No English landing page yet — the switch opens the English nayan.sa for now.
+  lang: { label: "Ar", href: "https://nayan.sa/en", aria: "English — nayan.sa" },
+  menuOpen: "فتح القائمة",
+  menuClose: "إغلاق القائمة",
 };
 
 export const loader = {
