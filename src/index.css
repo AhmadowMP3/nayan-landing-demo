@@ -17,6 +17,15 @@
   }
 }
 
+/* Reduced motion: hover nudges (arrows, cards) stay put — colour/opacity changes only. */
+@media (prefers-reduced-motion: reduce) {
+  .group:hover [class*="group-hover:-translate"],
+  .group:hover [class*="group-hover:translate"] {
+    --tw-translate-x: 0 !important;
+    --tw-translate-y: 0 !important;
+  }
+}
+
 @keyframes scrollHint {
   0% { transform: translateY(-100%); }
   100% { transform: translateY(200%); }
