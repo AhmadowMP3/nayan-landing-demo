@@ -7,6 +7,17 @@ export const brand = {
   whatsapp: "https://wa.me/966561291512",
 };
 
+/** <head> tags — injected into index.html at build time by the seo plugin in vite.config.ts. */
+export const seo = {
+  title: "نيــــان | تطوير عقاري فاخر في الرياض",
+  description:
+    "نيــــان مطوّر عقاري في الرياض بخبرة تتجاوز 20 عامًا. لكل منزل قصة، ونساعدك في كتابتها: التطوير والتنفيذ، تصميم المشاريع المخصصة، وإدارة العقارات وخدمات ما بعد البيع.",
+  siteName: "نيــــان",
+  locale: "ar_SA",
+  imageAlt: "واجهة أحد مشاريع نيــــان في الرياض — لكل منزل قصة.",
+  themeColor: "#16130f",
+};
+
 export const nav = {
   links: [
     { label: "الرئيسية", href: "#film" },
