@@ -17,35 +17,15 @@
   }
 }
 
-/* Branded scrollbar — warm gold thumb (from the lighting in Nayan's interiors) on the ink track. */
-:root {
-  --scroll-track: #16130f;
-  --scroll-thumb: #b8955a;
-  --scroll-thumb-hover: #d4b37c;
-}
-::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
-}
-::-webkit-scrollbar-track {
-  background: var(--scroll-track);
-}
-::-webkit-scrollbar-thumb {
-  background: linear-gradient(to bottom, var(--scroll-thumb-hover), var(--scroll-thumb));
-  border: 2px solid var(--scroll-track);
-  border-radius: 999px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: var(--scroll-thumb-hover);
-}
-::-webkit-scrollbar-corner {
-  background: var(--scroll-track);
-}
-/* Firefox (Chrome would drop the ::-webkit styles above if these were set unconditionally) */
-@supports not selector(::-webkit-scrollbar) {
+/* Branded scrollbar with no track: on mouse/trackpad devices the native scrollbar (and the strip
+   it reserves) is hidden and <ScrollThumb> floats a gold thumb over the page. Touch devices keep
+   their native overlay scrollbar. */
+@media (pointer: fine) {
   html {
-    scrollbar-width: thin;
-    scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+    scrollbar-width: none;
+  }
+  ::-webkit-scrollbar {
+    display: none;
   }
 }
 

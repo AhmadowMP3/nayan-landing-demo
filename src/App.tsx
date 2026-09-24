@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Nav from "./components/Nav";
+import ScrollThumb from "./components/ScrollThumb";
 import Film from "./sections/Film";
 import Discover from "./sections/Discover";
 import Points from "./sections/Points";
@@ -40,6 +41,7 @@ export default function App() {
       </main>
       <Footer />
       <Nav />
+      <ScrollThumb />
     </>
   );
 }
