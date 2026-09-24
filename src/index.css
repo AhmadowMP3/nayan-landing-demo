@@ -1,0 +1,23 @@
+@import "lenis/dist/lenis.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-ink text-white antialiased;
+  }
+  html.scroll-locked {
+    overflow: hidden;
+  }
+  body {
+    @apply font-sans;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+@keyframes scrollHint {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(200%); }
+}
