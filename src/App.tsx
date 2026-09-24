@@ -8,6 +8,7 @@ import Specs from "./sections/Specs";
 import Testimonial from "./sections/Testimonial";
 import Services from "./sections/Services";
 import Amenities from "./sections/Amenities";
+import Cta from "./sections/Cta";
 import { startSmoothScroll } from "./lib/smoothScroll";
 import { prefersReducedMotion } from "./lib/motion";
 
@@ -32,6 +33,7 @@ export default function App() {
         <Testimonial />
         <Services />
         <Amenities />
+        <Cta />
       </main>
       <Nav />
     </>
