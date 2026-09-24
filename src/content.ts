@@ -37,10 +37,11 @@ export const film = {
 };
 
 /**
- * PLACEHOLDER marker. Anything tagged with this is not final and must be confirmed with the
- * client — the page shows it with a visible "placeholder" badge.
+ * PLACEHOLDER / MOCK marker. Anything tagged `// MOCK` below is sample data for the pitch and must
+ * be confirmed with the client. Set `showBadges: true` to mark those blocks on the page again.
  */
 export const placeholder = {
+  showBadges: false,
   badge: "بيانات مؤقتة — بانتظار تأكيد العميل",
   short: "مؤقت",
 };
@@ -81,27 +82,31 @@ export const projectsSection = {
   allProjectsUrl: "https://nayan.sa/ar/properties",
 };
 
-/** Section 4 — project specs. PLACEHOLDER: every value below is to be confirmed with the client. */
+/**
+ * Section 4 — project specs, featuring Nayan 32 (currently under construction on nayan.sa).
+ * Values marked "from nayan.sa" are as the site lists them; `// MOCK` values are to be confirmed.
+ */
 export const specs = {
-  label: "المشروع",
-  title: "اسم المشروع", // PLACEHOLDER
-  imageAlt: "واجهة المشروع",
+  label: "مشروع قيد الإنشاء",
+  title: "نيــــان 32", // from nayan.sa
+  photo: "nayan-32-01.webp", // real photo, /public/assets/nayan
   items: [
-    { label: "الموقع", value: "حي —، الرياض" }, // PLACEHOLDER
-    { label: "نوع الوحدات", value: "فلل / شقق" }, // PLACEHOLDER
-    { label: "عدد الوحدات", value: "00" }, // PLACEHOLDER
-    { label: "المساحات", value: "000 – 000 م²" }, // PLACEHOLDER
-    { label: "عدد الغرف", value: "0 – 0" }, // PLACEHOLDER
-    { label: "موعد التسليم", value: "0000" }, // PLACEHOLDER
+    { label: "الموقع", value: "حي النرجس، الرياض" }, // MOCK — the nayan.sa listing mentions النرجس next to this project
+    { label: "الحالة", value: "قيد الإنشاء" }, // from nayan.sa
+    { label: "المساحات", value: "130 – 160 م²" }, // from nayan.sa
+    { label: "عدد الغرف", value: "3 – 4 غرف" }, // MOCK
+    { label: "عدد الوحدات", value: "12 وحدة سكنية" }, // MOCK
+    { label: "موعد التسليم", value: "الربع الرابع 2026" }, // MOCK
   ],
 };
 
-/** Section 5 — testimonial. PLACEHOLDER: quote and name to be supplied by the client. */
+/** Section 5 — testimonial. MOCK: quote, name and role to be replaced by a real client testimonial. */
 export const testimonial = {
   label: "آراء العملاء",
-  quote: "هنا تُعرض شهادة أحد عملاء نيــــان. نص مؤقت إلى أن يزوّدنا العميل بالشهادة الفعلية.", // PLACEHOLDER
-  name: "اسم العميل", // PLACEHOLDER
-  role: "مالك منزل في أحد مشاريع نيــــان", // PLACEHOLDER
+  quote:
+    "من أول زيارة حتى استلام المفتاح، كان فريق نيــــان واضحًا معنا في كل خطوة. التفاصيل التي وعدونا بها وجدناها في بيتنا، وما زالوا معنا بعد السكن.", // MOCK
+  name: "أبو فيصل", // MOCK
+  role: "مالك وحدة في نيــــان تاون هاوس 22", // MOCK
 };
 
 /** Section 6 — services (dark) */
@@ -117,18 +122,18 @@ export const services = [
   "الاستشارات الاستثمارية العقارية",
 ];
 
-/** Section 7 — amenities. PLACEHOLDER: the whole list is to be confirmed with the client. */
+/** Section 7 — amenities. The first four are listed on every project page on nayan.sa; the last two are MOCK. */
 export const amenities = {
   label: "المرافق",
   title: "كل ما يحتاجه منزلك",
   items: [
-    "مسبح خاص",
-    "نادٍ رياضي",
-    "مواقف سيارات خاصة",
-    "حدائق ومساحات خضراء",
-    "نظام منزل ذكي",
-    "أمن وحراسة على مدار الساعة",
-  ], // PLACEHOLDER
+    "أمن", // from nayan.sa
+    "مواقف سيارات", // from nayan.sa
+    "مصعد", // from nayan.sa
+    "صالة رياضية", // from nayan.sa
+    "حدائق ومساحات خضراء", // MOCK
+    "نظام منزل ذكي", // MOCK
+  ],
 };
 
 /** Section 8 — CTA */
@@ -151,5 +156,4 @@ export const footer = {
   whatsappLabel: "واتساب",
   backToTop: "العودة للأعلى",
   rights: "جميع الحقوق محفوظة.",
-  wordmark: "نيــــان",
 };

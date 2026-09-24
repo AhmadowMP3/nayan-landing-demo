@@ -17,6 +17,38 @@
   }
 }
 
+/* Branded scrollbar — warm gold thumb (from the lighting in Nayan's interiors) on the ink track. */
+:root {
+  --scroll-track: #16130f;
+  --scroll-thumb: #b8955a;
+  --scroll-thumb-hover: #d4b37c;
+}
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--scroll-track);
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, var(--scroll-thumb-hover), var(--scroll-thumb));
+  border: 2px solid var(--scroll-track);
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--scroll-thumb-hover);
+}
+::-webkit-scrollbar-corner {
+  background: var(--scroll-track);
+}
+/* Firefox (Chrome would drop the ::-webkit styles above if these were set unconditionally) */
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scroll-thumb) var(--scroll-track);
+  }
+}
+
 /* Reduced motion: hover nudges (arrows, cards) stay put — colour/opacity changes only. */
 @media (prefers-reduced-motion: reduce) {
   .group:hover [class*="group-hover:-translate"],

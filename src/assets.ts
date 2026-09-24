@@ -29,6 +29,4 @@ export const assets = {
    * project, investment → Malqa Center.
    */
   services: ["nayan-townhouse-22-01.webp", "nayan-site-05.webp", "nayan-26-01.webp", "almalqa-center-01.webp"],
-  /** Section 4 — building B from the street. */
-  project: still(170),
 };

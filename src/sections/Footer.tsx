@@ -1,57 +1,17 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { assets } from "../assets";
 import { brand, footer, nav } from "../content";
-import { prefersReducedMotion, revealIn } from "../lib/motion";
+import { revealIn } from "../lib/motion";
 import Arrow from "../components/Arrow";
 
-/**
- * Section 9 — footer (dark): contact details, links, then a giant "نيــــان" wordmark that spans the
- * full content width (sized from its measured width) and rises into place as the footer scrolls in.
- */
+/** Section 9 — footer (dark): logo, contact details, links, copyright. */
 export default function Footer() {
   const footerRef = useRef<HTMLElement>(null);
-  const markBoxRef = useRef<HTMLDivElement>(null);
-  const markRef = useRef<HTMLSpanElement>(null);
-
-  // fit the wordmark to the container width
-  useLayoutEffect(() => {
-    const box = markBoxRef.current!;
-    const mark = markRef.current!;
-    const fit = () => {
-      mark.style.fontSize = "100px";
-      const ratio = box.clientWidth / mark.getBoundingClientRect().width;
-      mark.style.fontSize = `${Math.floor(100 * ratio * 0.995)}px`;
-    };
-    fit();
-    const ro = new ResizeObserver(fit);
-    ro.observe(box);
-    document.fonts?.ready.then(() => {
-      fit();
-      ScrollTrigger.refresh();
-    });
-    return () => ro.disconnect();
-  }, []);
 
   useLayoutEffect(() => {
     const ctx = gsap.context(() => {
-      const el = footerRef.current!;
-      revealIn("[data-col]", { trigger: el, start: "top 85%", stagger: 0.1, y: 28 });
-      if (prefersReducedMotion()) {
-        revealIn(markRef.current, { trigger: markBoxRef.current, y: 0, start: "top 95%" });
-        return;
-      }
-      gsap.fromTo(
-        markRef.current,
-        { yPercent: 70, opacity: 0.2 },
-        {
-          yPercent: 0,
-          opacity: 1,
-          ease: "none",
-          scrollTrigger: { trigger: markBoxRef.current, start: "top bottom", end: "bottom bottom", scrub: 0.8 },
-        },
-      );
+      revealIn("[data-col]", { trigger: footerRef.current, start: "top 85%", stagger: 0.1, y: 28 });
     }, footerRef);
     return () => ctx.revert();
   }, []);
@@ -115,16 +75,9 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-20 flex flex-wrap items-center justify-between gap-3 border-t border-white/15 pt-6 text-xs text-white/45 md:mt-28">
+        <div className="mt-20 flex flex-wrap items-center justify-between gap-3 border-t border-white/15 py-8 text-xs text-white/45 md:mt-28">
           <span>
             © <span dir="ltr">{year}</span> {brand.name}. {footer.rights}
-          </span>
-        </div>
-
-        {/* giant wordmark */}
-        <div ref={markBoxRef} className="overflow-hidden pb-[2vw] pt-8 md:pt-12" aria-hidden="true">
-          <span ref={markRef} className="block w-max whitespace-nowrap font-semibold leading-[1.15]">
-            {footer.wordmark}
           </span>
         </div>
       </div>

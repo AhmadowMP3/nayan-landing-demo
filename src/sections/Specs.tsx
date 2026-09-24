@@ -1,14 +1,16 @@
 import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
-import { assets } from "../assets";
 import { specs } from "../content";
 import { prefersReducedMotion, revealIn } from "../lib/motion";
+import { photoByFile, photoSrc } from "../lib/nayanPhotos";
 import Eyebrow from "../components/Eyebrow";
 import PlaceholderBadge from "../components/PlaceholderBadge";
 
+const photo = photoByFile(specs.photo);
+
 /**
- * Section 4 — project specs. PLACEHOLDER values (see content.ts), shown with a visible badge.
- * The image opens upwards from its bottom edge; the spec rows fade + rise in one after another.
+ * Section 4 — project specs for a real Nayan project (some values MOCK, see content.ts).
+ * The photo opens upwards from its bottom edge; the spec rows fade + rise in one after another.
  */
 export default function Specs() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -30,16 +32,6 @@ export default function Specs() {
             scrollTrigger: { trigger: image, start: "top 80%", once: true },
           },
         );
-        gsap.fromTo(
-          image.querySelector("img"),
-          { scale: 1.2, yPercent: -4 },
-          {
-            scale: 1.05,
-            yPercent: 4,
-            ease: "none",
-            scrollTrigger: { trigger: image, start: "top bottom", end: "bottom top", scrub: 0.8 },
-          },
-        );
       }
       const section = sectionRef.current!;
       revealIn("[data-intro] > *", { trigger: section.querySelector("[data-intro]") });
@@ -51,13 +43,16 @@ export default function Specs() {
   return (
     <section ref={sectionRef} id="project" className="bg-sand px-5 pb-28 text-ink md:px-12 md:pb-40 lg:pb-48">
       <div className="mx-auto grid max-w-7xl items-center gap-12 lg:grid-cols-12 lg:gap-16">
-        <div ref={imageRef} className="relative aspect-[4/3] overflow-hidden bg-ink/10 lg:col-span-7 lg:aspect-[5/4]">
+        {/* real project photo at its natural proportions — never cropped */}
+        <div ref={imageRef} className="overflow-hidden bg-ink/10 lg:col-span-7">
           <img
-            src={assets.project}
-            alt={specs.imageAlt}
+            src={photoSrc(photo.file)}
+            alt={specs.title}
+            width={photo.width}
+            height={photo.height}
             loading="lazy"
             decoding="async"
-            className="absolute inset-0 h-full w-full object-cover"
+            className="block h-auto w-full"
           />
         </div>
 

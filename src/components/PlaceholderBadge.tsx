@@ -1,7 +1,11 @@
 import { placeholder } from "../content";
 
-/** Visible marker for content that is still to be confirmed with the client. */
+/**
+ * Visible marker for content that is still to be confirmed with the client.
+ * Hidden while `placeholder.showBadges` is false (the pitch shows mock data as if final).
+ */
 export default function PlaceholderBadge({ short = false, className = "" }: { short?: boolean; className?: string }) {
+  if (!placeholder.showBadges) return null;
   return (
     <span
       data-placeholder
